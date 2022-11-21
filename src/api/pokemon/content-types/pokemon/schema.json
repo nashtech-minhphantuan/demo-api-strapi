@@ -1,0 +1,74 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pokemons",
+  "info": {
+    "singularName": "pokemon",
+    "pluralName": "pokemons",
+    "displayName": "Pokemon",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "avatar": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "pokemon_types": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::pokemon-type.pokemon-type",
+      "mappedBy": "pokemon"
+    },
+    "animationSkill": {
+      "type": "string"
+    },
+    "animationNoAction": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "pokemon_skills": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::pokemon-skill.pokemon-skill",
+      "mappedBy": "pokemon"
+    },
+    "isWildPokemon": {
+      "type": "boolean"
+    },
+    "fullHealth": {
+      "type": "integer"
+    },
+    "damagePerAttack": {
+      "type": "integer"
+    },
+    "customNameByUser": {
+      "type": "string"
+    },
+    "animationDefault": {
+      "type": "string"
+    },
+    "userNote": {
+      "type": "richtext"
+    }
+  }
+}

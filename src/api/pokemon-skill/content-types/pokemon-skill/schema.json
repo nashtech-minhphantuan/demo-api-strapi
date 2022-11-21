@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pokemon_skills",
+  "info": {
+    "singularName": "pokemon-skill",
+    "pluralName": "pokemon-skills",
+    "displayName": "Pokemon Skill",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "skillName": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "pokemon": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::pokemon.pokemon",
+      "inversedBy": "pokemon_skills"
+    }
+  }
+}

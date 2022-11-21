@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pokemon_types",
+  "info": {
+    "singularName": "pokemon-type",
+    "pluralName": "pokemon-types",
+    "displayName": "Pokemon Type",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "typeName": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "pokemon": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::pokemon.pokemon",
+      "inversedBy": "pokemon_types"
+    }
+  }
+}
